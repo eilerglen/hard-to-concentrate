@@ -1,0 +1,122 @@
+/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
+
+.page {
+  background-image: url(../images/cover-image-dark.png);
+  background-position: center;
+  background-size: cover;
+    /* what is s*/
+
+  background-attachment: fixed;
+  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+}
+
+.header {
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  justify-items: end;
+  align-items: center;
+  block-size: 100vh;
+  min-block-size: 668px; /* ЧТо это?*/
+  padding: var(--main-gap);
+  font-size: var(--main-text-size);
+}
+
+/* @supports (block-size: 100dvb) {
+  .header {
+    block-size: 100dvb;
+  }
+} */
+
+.header__rec {
+  position: absolute;
+  color: var(--nav-color);
+  font-size: var(--main-text-size);
+  text-transform: uppercase;
+  top: 28px;
+  right: 28px;
+  
+  /* what is s*/
+
+  /* inset-inline-end: calc(var(--main-gap) + 28px);
+  inset-block-start: calc(var(--main-gap) + 2px); */
+}
+
+.header__rec::after {
+  content: '';
+  position: absolute;
+  inline-size: 10px;
+  block-size: 10px;
+  border-radius: 50%;
+  box-shadow:  0 0 4px 2px var(--nav-color);
+  background-color: var(--nav-color);
+    /* what is s*/
+
+  margin: -5px - 20px 0 0 ;
+  /* inset-inline-end: 0;
+  inset-block-start: 50%; */
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--main-gap);
+}
+
+.header__theme-menu-button {
+  position: relative;
+  display: block;
+  border: 1px solid transparent;
+  line-height: 1;
+  color: var(--nav-color);
+  text-transform: lowercase;
+  background-color: transparent;
+  cursor: pointer;
+  appearance: none; /* what is s*/
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible::after {
+  content: '';
+  position: absolute;
+  inline-size: 100%;
+  block-size: 1px;
+  background-color: var(--nav-color);
+  /* what is s*/
+
+  /* inset-block-end: -2px;
+  inset-inline-start: 0; */
+
+}
+
+.header__theme-menu-button:hover {
+  --nav-hover-color: rgb(255 0 112 / 0.4);
+  border: 1p solid var(--nav-hover-color);
+}
+.header__theme-menu-button_active {
+  border: 1px solid var(--nav-color);
+  pointer-events: none;  /* what is s*/
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+.header__logo {
+  justify-self: start;
+  color: var(--header-logo-color);
+  font-size: var(--header-logo-size);
+  line-height: .825;
+  text-shadow: 4px 4px 0 var(--accent-color);
+}
+.header__paragraph {
+  font-weight: bold;
+  line-height: var(--main-line-height);
+}
+
+.title-decor {
+  color: var(--main-heading-color);
+  background-color: var(--accent-color);
+}
